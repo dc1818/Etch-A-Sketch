@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="myStyle.css">
 
-    <script src ="script.js"></script>
+
+
+
 
   </head>
 
@@ -11,9 +14,251 @@
 
 
   <body>
+    <div id="title">
+        <h1>MY EZ</br></h1> <h3>ETCH A SKETCH</h3>
+      
+     </div>
+      
+     <div id="instructions">
+        
+         <h1><ul>
+             <li>Move your mouse anywhere in the white space to draw.</li>
+             <li>Select the size of a new grid then click the reset button</li>
+             
+             
+             
+             
+             
+             </ul></h1>
+    
+    
+    </div>
+      
+      <div id ="container">
+          
+          <div id = "selectorHolder">
+          <button type="button" id = "resetButton">Reset Grid</button>
+      
+           <form>
+               <input type = "radio" name = "size" id="16" value = "16">16
+               <input type = "radio" name = "size" id="32" value = "32">32
+                <input type = "radio" name = "size" id="64" value = "64">64
+                <input type = "radio" name = "size" id="128" value = "128">128
+                <input type = "radio" name = "size" id="256" value = "256">256
+        </form>
+              
+              
+              
+            
+         
+          
+          
+          </div>
+          
+        
+     <div class= "grid">
+              
+              
+              </div>
+     
+       
+    
+        
+</div>
 
 
+<script>
+let grid = document.querySelector(".grid");
+ document.querySelector("input[name='size']").checked=true;
+    let radio = document.querySelectorAll("input[name='size']");
+    let gridItems;          
+    let gridSize;
+    
+    
+    function checkRadioButtonValue()
+    {
+        if(document.getElementById('16').checked)
+            {
+                    console.log(document.getElementById("16"));
+                return 16;
+              
+            }
+        else if(document.getElementById('32').checked)
+            {
+              console.log(document.getElementById("32"));
+               
+                return 32;
+            }
+           else if(document.getElementById('64').checked)
+            {
+                 console.log(document.getElementById("64"));
+               return 64
+            }
+           else if(document.getElementById('128').checked)
+            {
+                 console.log(document.getElementById("128"));
+                return 128;
+            }
+           else if(document.getElementById('256').checked)
+            {
+                 console.log(document.getElementById("256"));
+               
+                return 256;
+            }
+    }
+    
+    
+        function setGridSize(size)
+    {
+        grid.style.gridTemplateRows = `repeat(${size},1fr)`;
+        grid.style.gridTemplateColumns = `repeat(${size},1fr)`;
+    }
+    
+    
+    function removeGridCells(cells)
+    {
+        let count = 0;
+        gridItems.forEach((item)=>
+                 {
+            
+            count++
+            console.log("count of current cells:" + count);
+        });
+    
+        if(count>cells)
+            {
+                for(let k =count;k>cells;k--)
+                    {
+                        grid.removeChild("l");
+                    }
+            }
+    
+    
+    }
+    
+    
+        
+    function addDiv(cells)
+    {
 
+        for(let l =0;l<cells*cells;l++)
+        {
+            let l = document.createElement("div");
+            let text = document.createTextNode("");
+  
+            l.classList.add("box")
+            l.appendChild(text);
+            console.log(grid);
+            grid.appendChild(l);
+        }
+   
+         gridItems = document.querySelectorAll(".box")
+    
+    
+    
+    }
+    
+        function resetGridColor()
+    {
+        gridItems.forEach((item)=>
+        {
+            item.style.backgroundColor = "white";
+        })
+    
+        removeGridCells(gridSize);
+    
+    }
+      
+
+    
+   
+    
+    
+    
+    
+     addDiv(16);
+        setGridSize(16);
+    
+    draw(gridItems);
+    
+    
+    checkRadioButtonValue();
+    
+   
+   
+   
+  
+    
+    
+       
+   function draw(gridItems)
+    {
+        
+         //add event listener to every box
+        gridItems.forEach((item)=>
+                     
+    {
+        item.addEventListener("mouseover",()=>
+        {
+         item.style.backgroundColor = "#DB5E68";
+            
+        });
+        
+        
+    });
+    
+        
+    }
+    
+   let button = document.querySelector("#resetButton");
+    draw(gridItems);
+
+    
+
+    
+
+    
+
+  
+   
+    
+   
+    
+    
+    button.addEventListener("click",()=>
+        {
+        gridItems.forEach((item)=>
+            {
+                item.style.backgroundColor = "white";
+            })
+        
+      
+        grid.innerHTML = "";
+        grid.style.removeProperty("grid-template");
+        addDiv(checkRadioButtonValue());
+     setGridSize(checkRadioButtonValue());
+     draw(gridItems);
+    });
+     
+                          
+      
+    
+    
+                            
+     
+      
+       
+   
+   
+    
+   
+    console.log(button);
+    
+    
+    
+    
+
+</script>
 
 
 

@@ -1,0 +1,160 @@
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+
+#container
+{
+  position:absolute;
+    left:33%;
+  top:10%;
+  height: 1000px;
+  width: 400px;
+ margin: 10px 10px;
+  
+}
+.grid
+{
+    position:relative;
+    display: grid;
+    border: 2px blue solid;
+    height:700px;
+    width:600px;
+    margin: 10px 10px;
+    border: 10px solid black;
+    box-shadow: 3px 3px 5px 6px black;
+    
+   
+  
+    
+   /* grid-template: repeat(16,1fr)/repeat(16,1fr);*/
+}
+#buttonContainer
+{
+    position:relative;
+    background-color:black;
+    left:15%;
+   
+}
+#resetButton
+{
+    position:relative;
+
+	background-color:white;
+	display:inline-block;
+	
+	 font-family: 'Oswald', sans-serif;
+    font-size:15px;
+	
+	
+	font-weight:bold;
+	padding:11px 23px;
+	
+	text-shadow:0px #2b665e;
+    left:20%;
+    top:15px;
+}
+/*
+#resetButton
+{
+    position:relative;
+    left:20%;
+    top: 16px;
+    width: 100px;
+    height: 40px;
+    font-family: 'Oswald', sans-serif;
+    font-weight:400px;
+    border: 1px solid black;
+    color:black;
+    padding: 30px 32px
+    text-align:center;
+    font-size:16px;
+    border-radius: 5px 5px 5px 5px;
+}
+*/
+#resetButton:hover
+{
+
+	
+	background-color:#DB5E68;
+}
+
+#resetButton:active
+{
+    position:relative;
+	top:1px;
+    
+    
+}
+
+
+form
+{
+    position:relative;
+    left:55%;
+    bottom: 15px;
+    color:#DB5E68;
+    font-weight:500;
+    font-size: 18px;
+}
+
+#selectorHolder
+{
+    position:relative;
+    background-color:rgba(0, 0, 0,1);
+    left: 10px;
+    width: 620px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    top: 10px;
+    box-shadow: 3px 3px 5px 6px black;
+    /*border-radius: 25px;*/
+}
+
+.box
+{
+    background-color:white;
+    border: .1px solid rgba(0,0,0,.1);
+}
+
+.boxColorIn
+{
+    background-color:red;
+    border: 2px solid black;
+}
+
+body
+{
+  overflow-x: hidden;
+  overflow-y: hidden;
+    background-color:#29335C;
+ /*background: url("Shot10.jpg");*/
+    font-family: 'Oswald', sans-serif;
+}
+h1
+{
+    font-size: 20px;
+    text-align:left;
+}
+#instructions
+{
+    position:absolute;
+    background-color:black;
+    left:3%;
+    top: 450px;
+    color:#DB5E68;
+    text-align:left;
+    padding: 15px 15px 15px 15px;
+    
+    text-shadow: 2px 2px black;
+}
+#title
+{
+    position:absolute;
+    left:10%;
+    top: 15%;
+    color:#DB5E68;
+    font-size:35px;
+    text-shadow: 5px 5px black;
+    background-color: rgba(0,0,0,0.4);
+    padding: 0.5em;
+}
